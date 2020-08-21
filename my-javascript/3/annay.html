@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let daysOfweek = new Array()
+        daysOfweek1 = new Array(7)
+        daysOfweek2 = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday',
+            'Thursday', 'Friday', 'Saturday')
+        console.log(daysOfweek)
+        console.log(daysOfweek1)
+        console.log(daysOfweek2)
+
+        let days = [10]
+        let days2 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+            'Friday', 'Saturday']
+        console.log(days)
+        console.log(days2)
+        console.log(days2.length)
+
+        for (let i = 0; i < days2.length; i++) {
+            console.log(days2[i])
+        }
+
+
+        const fibonacci = []
+        fibonacci[1] = 1
+        fibonacci[2] = 1
+        for (let i = 3; i < 20; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2]
+            console.log(fibonacci[i])
+        }
+
+        let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        numbers[numbers.length] = 10
+        numbers.push(11)
+        numbers.push(12, 13)
+
+        console.log(numbers)
+
+        Array.prototype.insertFristPosition = function (value) {
+            for (let i = this.length; i >= 0; i--) {
+                this[i] = this[i - 1]
+            }
+            this[0] = value
+        }
+        numbers.insertFristPosition(-1)
+
+        numbers.unshift(-2)
+        numbers.unshift(-3, -4)
+
+        console.log(numbers)
+        numbers.pop()
+        console.log(numbers)
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = numbers[i + 1]
+        }
+
+        Array.prototype.reIndex = function (myarray) {
+            const newArray = []
+            for (let i = 0; i < myarray.length; i++) {
+                if (myarray[i] !== undefined) {
+                    newArray.push(myarray[i])
+                }
+            }
+            return newArray
+        }
+
+        Array.prototype.removeFirstPosition = function () {
+            for (let i = 0; i < this.length; i++) {
+                this[i] = this[i + 1]
+            }
+            return this.reIndex(this)
+        }
+
+        console.log("============"+ numbers)
+        numbers = numbers.removeFirstPosition();
+        console.log(numbers)
+        numbers.shift()
+
+        console.log(numbers)
+
+        let tem = numbers.splice(5,3)
+        console.log(tem)
+        console.log(numbers)
+        delete tem[0]
+        console.log(tem)
+        console.log(numbers)
+        // [-1, 0, 1, 2, 3, 7, 8, 9, 10, 11, 12]
+        numbers.splice(5,0,2,3,4)
+        // [-1, 0, 1, 2, 3, 2, 3, 4, 7, 8, 9, 10, 11, 12]
+        console.log(numbers)
+        numbers.splice(5,3,111,222,333)
+        // [-1, 0, 1, 2, 3, 111, 222, 333, 7, 8, 9, 10, 11, 12]
+        console.log(numbers)
+
+        let averageTemp = []
+        averageTemp[0] = [72,75,79,79,81,81]
+        averageTemp[1] = [81,79,75,75,73,73]
+        console.log(averageTemp)
+
+        function printMatrix(myMatrix){
+            for( let i = 0 ;i< myMatrix.length ;i++){
+                for (let j = 0 ;j<myMatrix[i].length;j++){
+                    console.log(myMatrix[i][j])
+                }
+            }
+        }
+        printMatrix(averageTemp)
+        console.log(averageTemp.toString())
+
+    </script>
+</body>
+
+</html>

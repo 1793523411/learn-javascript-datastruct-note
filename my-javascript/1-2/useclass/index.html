@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(title,page,isbn){
+            this.title = title
+            this.page = page
+            this.isbn = isbn
+            this.print = function(){
+                console.log('Hello')
+            }
+        }
+        Book.prototype.print2 = function(){
+            console.log('Hello~~~')
+        }
+        var book = new Book('title','pag','isbn')
+        console.log(book)
+
+        class Book2 {
+            constructor(title,pages,isbn) {
+                this.title = title
+                this.pages = pages
+                this.isbn = isbn
+            }
+            printIsbn(){
+                console.log(this.isbn)
+            }
+        }
+        var book2 = new Book2('title','pag','isbn')
+        console.log(book2)
+
+        class ITBook extends Book2 {
+            constructor (title,pages,isbn,tecnology) {
+                super(title,pages,isbn)
+                this.tecnology = tecnology
+            }
+            printTechnology() {
+                console.log(this.tecnology)
+                super.printIsbn(this.isbn)
+            }
+        }
+        let jsBook = new ITBook('学习js','200','458646416','JavaScript')
+        console.log(jsBook.title)
+        console.log(jsBook.printIsbn)
+        jsBook.printIsbn()
+        console.log(jsBook.printTechnology)
+        jsBook.printTechnology()
+
+
+        class Person {
+            constructor (name) {
+                this._name = name;
+            }
+            get name() {
+                return this._name
+            }
+            set name(value) {
+                this._name = value
+            }
+        }
+
+        let lotrChar = new Person('Frodo')
+        console.log(lotrChar.name)
+        lotrChar.name = 'Gandalf'
+        console.log(lotrChar.name)
+        lotrChar._name = 'Sam'
+        console.log(lotrChar.name)
+
+        const area = 3.14 * (2**2)
+        console.log(area)
+
+    </script>
+</body>
+</html>

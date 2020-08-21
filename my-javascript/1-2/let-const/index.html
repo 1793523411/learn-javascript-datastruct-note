@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let movie = 'Lord of the Rings'
+
+        function starWaresFan() {
+            const movie = 'Star Wars'
+            return movie
+        }
+
+        function marvelFan() {
+            movie = 'The Avengers'
+            return movie
+        }
+
+        function blizzardFan() {
+            const isFan = true
+            let phrase = 'Warcraft'
+            console.log('Befor if:' + phrase)
+            if (isFan) {
+                let phrase = 'initial text';
+                phrase = 'For the Hordee!'
+                console.log('Inside if:' + phrase)
+            }
+            phrase = 'For the Alliance!'
+            console.log("After if :" + phrase)
+        }
+
+        console.log(movie)
+        console.log(starWaresFan())
+        console.log(marvelFan())
+        console.log(movie)
+        blizzardFan()
+
+
+        var circleAreaEs5 = function circleArea(r) {
+            var PI = 3.14
+            var area = PI * r * r
+            return area
+        }
+
+        // console.log(circleArea(2))//X
+        console.log(circleAreaEs5(2))
+
+        circleArea2 = r => 3.14 * r * r
+        console.log(circleArea2(2))
+
+        const hello = () => console.log("Hello")
+        hello()
+
+        function sum(x = 1, y = 2, z = 3) {
+            return x + y + z;
+        }
+
+        console.log(sum())
+        console.log(sum(4, 2))
+        console.log(sum(4, 2, 1))
+
+        let params = [3, 4, 5]
+        console.log(sum(...params))
+        console.log(sum.apply(undefined, params))
+
+        function restParamaterFunction(x, y, ...a) {
+            return (x + y) * a.length
+        }
+        console.log(restParamaterFunction(1, 2, "hello", true, 7))
+
+        function restParamaterFunction2(x, y) {
+            var a = Array.prototype.slice.call(arguments, 2)
+            return (x + y) * a.length
+        }
+        console.log(restParamaterFunction(1, 2, "hello", true, 7))
+
+        let [x, y] = ['a', 'b']
+
+        console.log(x, y)
+        // [x,y] = [y,x]
+        console.log(x, y)
+
+        let obj = { x, y }
+        console.log(obj)
+
+        const helloo = {
+            name: 'adcdef',
+            printHello() {
+                console.log('Hello')
+            }
+        }
+        const hello2 = {
+            name: 'adcdef',
+            printHello: function printHello() {
+                console.log('Hello')
+            }
+        }
+
+        helloo.printHello()
+
+    </script>
+</body>
+
+</html>

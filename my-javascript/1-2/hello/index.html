@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 1
+        var obj = {
+            a: 1,
+            b: "asdas"
+        }
+        var str = "sadasdasd"
+        console.log(str)
+        str = "dsafa"
+        console.log(str)
+        console.log("num"+num)//num1
+        console.log("num:",num)//num: 1
+        console.log('obj'+ obj)//obj[object Object]
+        console.log('obj', obj)//obj {a: 1, b: "asdas"}
+        delete obj.a
+        console.log('obj', obj)//obj {a: 1, b: "asdas"}
+
+        var myVariable = 'global'
+        myOtherVariable = 'global2'
+
+        function myFunction(){
+            var myVariable = 'local'
+            return myVariable
+        }
+
+        function myOtherFunvtion(){
+            myOtherVariable = 'local2'
+            return myOtherVariable
+        }
+
+        console.log(myVariable)
+        console.log(myFunction())
+        console.log(myVariable)
+        console.log(myOtherVariable)
+        console.log(myOtherFunvtion())
+        console.log(myOtherVariable)
+
+
+    </script>
+</body>
+</html>
